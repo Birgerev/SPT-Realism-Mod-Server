@@ -435,6 +435,23 @@ export class BotLoader {
                 }
             });
         }
+
+        if(ModTracker.batteryModPresent) {
+            const batteryModConfig = require("../../../Jiro-BatterySystem/config/config.json");
+            
+            batteryModConfig.CreateItemResult.forEach(AABatteryGear => {
+                if (!inventory.mods[AABatteryGear])
+                    inventory.mods[AABatteryGear] = { "mod_equipment": [ "5672cb124bdc2d1a0f8b4568"] }
+            });
+            batteryModConfig.CR2032.forEach(CR2032BatteryGear => {
+                if (!inventory.mods[CR2032BatteryGear])
+                    inventory.mods[CR2032BatteryGear] = { "mod_equipment": [ "5672cb304bdc2dc2088b456a"] }
+            });
+            batteryModConfig.CR123.forEach(CR123BatteryGear => {
+                if (!inventory.mods[CR123BatteryGear])
+                    inventory.mods[CR123BatteryGear] = { "mod_equipment": [ "590a358486f77429692b2790"] }
+            });
+        }
     }
 
     private setBotTier(pmcData, bots: BotLoader, helper: Utils) {
