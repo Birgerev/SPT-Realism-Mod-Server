@@ -888,10 +888,10 @@ export class Main implements IPreSptLoadMod, IPostDBLoadMod, IPostSptLoadMod {
     private checkForMods(preSptModLoader: PreSptModLoader, logger: ILogger, modConf: any) {
         const activeMods = preSptModLoader.getImportedModDetails();
         for (const modname in activeMods) {
-            // if (modname.includes("Jiro-BatterySystem")) {
-            //     ModTracker.batteryModPresent = true;
-            //     logger.logWithColor("Realism: Jiro Battery Mod Detected, Making Adjustments", LogTextColor.GREEN);
-            // }
+            if (modname.includes("Jiro-BatterySystem")) {
+                ModTracker.batteryModPresent = true;
+                logger.logWithColor("Realism: Jiro Battery Mod Detected, Making Adjustments", LogTextColor.GREEN);
+            }
             if (modname.includes("Solarint-SAIN-ServerMod")) {
                 ModTracker.sainPresent = true;
                 logger.logWithColor("Realism: SAIN Detected, Making Adjustments", LogTextColor.GREEN);
