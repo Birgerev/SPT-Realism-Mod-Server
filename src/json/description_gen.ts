@@ -91,7 +91,7 @@ export class DescriptionGen {
                     else {
                         locale[`${templateItem}` + " Description"] = "This faceshield does NOT allow the use of sights while using a stock in the extended/unfolded position, unless the weapon/stock allows it." + `\n\n${locale[`${templateItem}` + " Description"]}`;
                     }
-                    locale[`${templateItem}` + " Description"] = "This faceshield gives penalties to sprint speed if it is deployed. Ergo penalty only applies if deployed." + `\n\n${locale[`${templateItem}` + " Description"]}`;
+                    locale[`${templateItem}` + " Description"] = "This faceshield gives additional penalties to movement speed when deployed deployed. Ergo penalty only applies when deployed." + `\n\n${locale[`${templateItem}` + " Description"]}`;
                 }
                 if ((item._parent === ParentClasses.ARMOREDEQUIPMENT || item._parent === ParentClasses.HEADWEAR || item._parent === ParentClasses.FACECOVER) && item._props.HasHinge == false) {
                     if (item._props.ConflictingItems[1] === "false") {
@@ -122,7 +122,7 @@ export class DescriptionGen {
                     locale[`${templateItem}` + " Description"] = `${locale[`${templateItem}` + " Description"]}` + "\n\nWARNING: Adverse effects may include persistent pain, hand tremors, reduced concentration, attention and perception, dyspnea, chronic inflammation, and hematuria with clot retention.";
                 }
                 //weight
-                if (item._id === "5ed51652f6c34d2cc26336a1") {
+                if (item._id === "5ed51652f6c34d2cc26336a1" || "66507eabf5ddb0818b085b68") {
                     locale[`${templateItem}` + " Description"] = `${locale[`${templateItem}` + " Description"]}` + "\n\nWARNING: Adverse effects may include tunnel vision, hand tremors, reduced concentration, slowed metabolism, dyspnea, chronic fatigue, and asthenia.";
                 }
                 //performance

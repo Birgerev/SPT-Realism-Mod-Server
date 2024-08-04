@@ -179,6 +179,7 @@ export class Player {
             this.globalDB().Stamina.OxygenCapacity = 525;
             this.globalDB().Stamina.OxygenRestoration = 8.4;
     
+            this.globalDB().Stamina.HandsRestoration = 2.25;
             this.globalDB().Stamina.AimDrainRate = 0.3;
             this.globalDB().Stamina.AimConsumptionByPose["x"] = 0.05;
             this.globalDB().Stamina.AimConsumptionByPose["y"] = 0.35;
@@ -319,8 +320,12 @@ export class Player {
             this.debuffMul(health.Wound.ThresholdMin, mult);
             this.debuffMul(health.Wound.ThresholdMax, mult);
 
-            health.LightBleeding.HealthLoopTime = 10;
+            health.LightBleeding.HealthLoopTime = 8;
             health.LightBleeding.DamageHealth = 0.65;
+            health.LightBleeding.DamageEnergy = 0.85;
+
+            health.HeavyBleeding.DamageHealth = 0.95;
+            health.HeavyBleeding.DamageEnergy = 2.25;
 
             this.globalDB().Health.Effects.Fracture.BulletHitProbability.Threshold /= mult
             this.globalDB().Health.Effects.Fracture.BulletHitProbability.K *= Math.sqrt(mult)
