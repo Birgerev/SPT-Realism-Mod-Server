@@ -421,15 +421,7 @@ export class BotLoader {
     public pushFiltersToAllBots() {
         const bots = this.tables.bots.types;
         for (let i in bots) {
-            this.arrays.gasMasks.forEach(g => {
-                if (!bots[i].inventory.mods[g]) {
-                    bots[i].inventory.mods[g] = {
-                        "mod_equipment": [
-                            "590c595c86f7747884343ad7"
-                        ]
-                    }
-                }
-            });
+            this.pushGasMaskFilters(bots[i].inventory);
         }
     }
 
